@@ -1,0 +1,1 @@
+docker run -it -v ${PWD}/myjavascript.js:/usr/myjavascript.js node:18 node /usr/myjavascript.js

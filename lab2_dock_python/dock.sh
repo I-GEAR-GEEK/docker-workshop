@@ -1,0 +1,1 @@
+docker run -it -v ${PWD}/mypy.py:/usr/mypy.py python:2 python /usr/mypy.py
