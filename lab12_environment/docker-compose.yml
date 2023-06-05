@@ -1,0 +1,12 @@
+version: '3'
+services:
+  my-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my-server
+    environment:
+      DATABASE_URL: https://some-database:80
+      DATABASE_USERNAME: rootuser
+    ports:
+      - "5000:5000"
