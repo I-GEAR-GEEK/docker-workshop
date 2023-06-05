@@ -6,7 +6,33 @@ services:
       dockerfile: Dockerfile
     container_name: my-server
     environment:
-      DATABASE_URL: https://some-database:80
-      DATABASE_USERNAME: rootuser
+      MYSQL_HOST: "my-mysql"
+      MYSQL_PORT: 3306
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD: "secret"
+      MYSQL_DATABASE: "mydatabase"
+    links:
+      - my-mysql
+    depends_on:
+      - my-mysql
     ports:
       - "5000:5000"
+    volumes:
+      - ./server.js:/usr/server.js
+  my-mysql:
+    image: mysql:8
+    container_name: "my-mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: "secret"
+      MYSQL_DATABASE: "mydatabase"
+    ports:
+      - 3306:3306
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    links:
+      - my-mysql
+    environment:
+      PMA_HOST: my-mysql
+    ports:
+      - 8080:80

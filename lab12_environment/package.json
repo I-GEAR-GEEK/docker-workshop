@@ -1,5 +1,5 @@
 {
-  "name": "lab8_build_server_image",
+  "name": "lab11_dockerfile_compose",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -7,6 +7,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mysql2": "^3.3.3"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "lab8_build_server_image",
+  "name": "lab9_image_versioning",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
